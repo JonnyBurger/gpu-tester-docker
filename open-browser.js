@@ -24,6 +24,7 @@ const getOpenGlRenderer = (option) => {
       "--use-angle=vulkan",
       "--disable-vulkan-fallback-to-gl-for-testing",
       "--ignore-gpu-blocklist",
+      "--single-process",
     ];
   }
   if (renderer === null) {

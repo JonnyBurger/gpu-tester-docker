@@ -58,10 +58,10 @@ COPY src src
 
 RUN npm install
 
-COPY render.mjs render.mjs
 COPY open-browser.js node_modules/@remotion/renderer/dist/open-browser.js
 
 COPY nvidia_icd.json /etc/vulkan/icd.d/nvidia_icd.json
 
 RUN apt install -y libglib2.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdbus-1-3 libxcomposite1 libxdamage1 libpango-1.0-0 libcairo2 libasound2 libatspi2.0-0 libxkbcommon0 libxrandr2 libc6 libnvidia-gl-440
+COPY render.mjs render.mjs
 ENTRYPOINT [ "node", "render.mjs" ]
