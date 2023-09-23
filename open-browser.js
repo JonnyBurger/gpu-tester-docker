@@ -24,7 +24,6 @@ const getOpenGlRenderer = (option) => {
       "--use-angle=vulkan",
       "--disable-vulkan-fallback-to-gl-for-testing",
       "--ignore-gpu-blocklist",
-      "--enable-features=Vulkan,UseSkiaRenderer",
     ];
   }
   if (renderer === null) {
@@ -75,9 +74,10 @@ const internalOpenBrowser = async ({
       "--allow-pre-commit-input",
       "--disable-background-networking",
       "--single-process",
-      "--enable-features=NetworkService,NetworkServiceInProcess",
+      "--enable-features=NetworkService,NetworkServiceInProcess,Vulkan,UseSkiaRenderer",
       "--disable-background-timer-throttling",
       "--disable-backgrounding-occluded-windows",
+      "--enable-unsafe-webgpu",
       "--disable-breakpad",
       "--disable-client-side-phishing-detection",
       "--disable-component-extensions-with-background-pages",
