@@ -74,6 +74,7 @@ const internalOpenBrowser = async ({
       "about:blank",
       "--allow-pre-commit-input",
       "--disable-background-networking",
+      "--single-process",
       "--enable-features=NetworkService,NetworkServiceInProcess",
       "--disable-background-timer-throttling",
       "--disable-backgrounding-occluded-windows",
