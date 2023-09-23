@@ -36,6 +36,8 @@ await renderMedia({
     };
   },
   timeoutInMilliseconds: 90000,
-  chromiumOptions: {},
+  chromiumOptions: {
+    gl: "vulkan",
+  },
 });
 console.log(`Rendered composition ${composition.id}.`);
