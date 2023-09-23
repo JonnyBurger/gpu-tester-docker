@@ -9,6 +9,11 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesourc
 RUN apt-get update
 RUN apt-get install nodejs -y
 
+COPY gpu.spec.js gpu.spec.js
+COPY package.json package.json
+COPY playwright.config.js playwright.config.js
+
+
 RUN npm install
 
 RUN PLAYWRIGHT_BROWSERS_PATH=/tests/.cache/ms-playwright npx playwright install chromium
