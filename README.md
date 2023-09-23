@@ -2,6 +2,8 @@ Image (search in Community images in AMI marketplace): **ubuntu/images/hvm-ssd/u
 
 Instance type: g4dn.xlarge
 
+Reference: https://dev.to/perrocontodo/run-playwright-tests-with-hardware-acceleration-on-a-gpu-enabled-ec2-instance-with-docker-support-4j2
+
 ```bash
 sudo apt-get update -y && sudo apt upgrade -y
 sudo reboot
