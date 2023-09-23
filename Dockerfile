@@ -1,4 +1,4 @@
-FROM nvidia/vulkan:1.2.133-450
+FROM nvidia/vulkan:1.3-470
 
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
 RUN apt-get update
@@ -19,5 +19,5 @@ COPY src src
 
 RUN npm install
 
-RUN PLAYWRIGHT_BROWSERS_PATH=/tests/.cache/ms-playwright npx playwright install chromium
 RUN apt install -y libglib2.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdbus-1-3 libxcomposite1 libxdamage1 libpango-1.0-0 libcairo2 libasound2 libatspi2.0-0
+ENTRYPOINT [ "node", "render.mjs" ]
