@@ -23,4 +23,6 @@ sudo systemctl enable docker.service && sudo systemctl enable containerd.service
 distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
 sudo docker run -it --gpus all nvidia/cuda:11.6.2-base-ubuntu20.04 nvidia-smi
 apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
+sudo docker build -t gputester .
+sudo docker run --gpus all -e "NVIDIA_DRIVER_CAPABILITIES=all" gputester
 ```
