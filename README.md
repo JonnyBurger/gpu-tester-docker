@@ -7,7 +7,7 @@ Reference: https://dev.to/perrocontodo/run-playwright-tests-with-hardware-accele
 ```bash
 sudo apt-get update -y && sudo apt upgrade -y
 sudo reboot
-wget https://us.download.nvidia.com/tesla/515.65.01/nvidia-driver-local-repo-ubuntu2204-515.65.01_1.0-1_amd64.deb
+wget https://us.download.nvidia.com/tesla/535.104.05/nvidia-driver-local-repo-ubuntu2204-535.104.05_1.0-1_amd64.deb
 sudo dpkg -i nvidia-driver-local-repo-ubuntu2204-515.65.01_1.0-1_amd64.deb
 sudo cp /var/nvidia-driver-local-repo-ubuntu2204-515.65.01/nvidia-driver-local-22D4AC2B-keyring.gpg /usr/share/keyrings/
 sudo apt-get update && sudo apt-get -y install cuda-drivers
