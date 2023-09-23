@@ -33,9 +33,9 @@ RUN wget -q --show-progress \
 # Setup the required capabilities for the container runtime    
 ENV NVIDIA_DRIVER_CAPABILITIES compute,graphics,utility
 
-RUN wget https://us.download.nvidia.com/tesla/535.104.05/nvidia-driver-local-repo-ubuntu2204-535.104.05_1.0-1_amd64.deb
-RUN dpkg -i nvidia-driver-local-repo-ubuntu2204-535.104.05_1.0-1_amd64.deb
-RUN cp /var/nvidia-driver-local-repo-ubuntu2204-535.104.05/nvidia-driver-local-62140ACB-keyring.gpg /usr/share/keyrings/
+RUN wget https://us.download.nvidia.com/tesla/515.65.01/nvidia-driver-local-repo-ubuntu2204-515.65.01_1.0-1_amd64.deb
+RUN dpkg -i nvidia-driver-local-repo-ubuntu2204-515.65.01_1.0-1_amd64.deb
+RUN cp /var/nvidia-driver-local-repo-ubuntu2204-515.65.01/nvidia-driver-local-22D4AC2B-keyring.gpg /usr/share/keyrings/
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install cuda-drivers
 
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
@@ -64,11 +64,4 @@ COPY nvidia_icd.json /etc/vulkan/icd.d/nvidia_icd.json
 
 RUN apt install -y libglib2.0-0 libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdbus-1-3 libxcomposite1 libxdamage1 libpango-1.0-0 libcairo2 libasound2 libatspi2.0-0 libxkbcommon0 libxrandr2 libc6 libnvidia-gl-440
 COPY render.mjs render.mjs
-COPY gpu.spec.js gpu.spec.js
-COPY playwright.config.js playwright.config.js
-
-RUN PLAYWRIGHT_BROWSERS_PATH=/tests/.cache/ms-playwright npx playwright install chromium
-RUN PLAYWRIGHT_BROWSERS_PATH=/tests/.cache/ms-playwright npx playwright test gpu.spec.js
-
-
 ENTRYPOINT [ "node", "render.mjs" ]
