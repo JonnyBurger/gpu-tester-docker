@@ -9,11 +9,12 @@ RUN echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesourc
 RUN apt-get update
 RUN apt-get install nodejs -y
 
+WORKDIR /usr/app
+
 COPY gpu.spec.js gpu.spec.js
 COPY package.json package.json
 COPY playwright.config.js playwright.config.js
 
-WORKDIR /usr/app
 
 RUN npm install
 
