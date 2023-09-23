@@ -37,7 +37,7 @@ await renderMedia({
   },
   timeoutInMilliseconds: 90000,
   chromiumOptions: {
-    gl: "vulkan",
+    gl: "swiftshader",
   },
 });
 console.log(`Rendered composition ${composition.id}.`);
