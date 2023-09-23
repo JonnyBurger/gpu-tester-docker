@@ -13,6 +13,7 @@ COPY gpu.spec.js gpu.spec.js
 COPY package.json package.json
 COPY playwright.config.js playwright.config.js
 
+WORKDIR /usr/app
 
 RUN npm install
 
