@@ -114,7 +114,7 @@ const internalOpenBrowser = async ({
       "--allow-running-insecure-content",
       "--disable-component-update",
       "--disable-domain-reliability",
-      "--disable-features=AudioServiceOutOfProcess,IsolateOrigins,site-per-process,Translate,BackForwardCache,AvoidUnnecessaryBeforeUnloadCheckSync,IntensiveWakeUpThrottling",
+      "--disable-features=AudioServiceOutOfProcess,IsolateOrigins,site-per-process,Translate,BackForwardCache,AvoidUnnecessaryBeforeUnloadCheckSync,IntensiveWakeUpThrottling,UseChromeOSDirectVideoDecoder",
       "--disable-print-preview",
       "--disable-site-isolation-trials",
       "--disk-cache-size=268435456",
