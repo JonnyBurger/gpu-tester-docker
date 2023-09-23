@@ -23,7 +23,7 @@ const getOpenGlRenderer = (option) => {
     return [
       "--use-angle=vulkan",
       "--disable-vulkan-fallback-to-gl-for-testing",
-      "--ignore-gpu-blocklist",
+      "--dignore-gpu-blocklist",
     ];
   }
   if (renderer === null) {
@@ -71,78 +71,13 @@ const internalOpenBrowser = async ({
     indent,
     args: [
       "about:blank",
-      "--allow-pre-commit-input",
-      "--disable-background-networking",
-      "--single-process",
-      "--enable-features=NetworkService,NetworkServiceInProcess,Vulkan,UseSkiaRenderer",
-      "--disable-background-timer-throttling",
-      "--disable-backgrounding-occluded-windows",
+      "--headless",
+      "--enable-features=Vulkan,UseSkiaRenderer",
+      "--use-vulkan=swiftshader",
       "--enable-unsafe-webgpu",
-      "--disable-breakpad",
-      "--disable-client-side-phishing-detection",
-      "--disable-component-extensions-with-background-pages",
-      "--disable-default-apps",
-      "--disable-dev-shm-usage",
-      "--no-proxy-server",
-      "--proxy-server='direct://'",
-      "--proxy-bypass-list=*",
-      "--disable-hang-monitor",
-      "--disable-extensions",
-      "--disable-ipc-flooding-protection",
-      "--disable-popup-blocking",
-      "--disable-prompt-on-repost",
-      "--disable-renderer-backgrounding",
-      "--disable-sync",
-      "--force-color-profile=srgb",
-      "--metrics-recording-only",
-      "--no-first-run",
-      "--video-threads=" +
-        (0, get_video_threads_flag_1.getIdealVideoThreadsFlag)(),
-      "--enable-automation",
-      "--password-store=basic",
-      "--use-mock-keychain",
-      "--enable-blink-features=IdleDetection",
-      "--export-tagged-pdf",
-      "--intensive-wake-up-throttling-policy=0",
-      ((_b = chromiumOptions.headless) !== null && _b !== void 0 ? _b : true)
-        ? "--headless"
-        : null,
-      "--no-sandbox",
-      "--disable-setuid-sandbox",
-      ...customGlRenderer,
-      "--disable-background-media-suspend",
-      "--allow-running-insecure-content",
-      "--disable-component-update",
-      "--disable-domain-reliability",
-      "--disable-features=AudioServiceOutOfProcess,IsolateOrigins,site-per-process,Translate,BackForwardCache,AvoidUnnecessaryBeforeUnloadCheckSync,IntensiveWakeUpThrottling,UseChromeOSDirectVideoDecoder",
-      "--disable-print-preview",
-      "--disable-site-isolation-trials",
-      "--disk-cache-size=268435456",
-      "--hide-scrollbars",
-      "--no-default-browser-check",
-      "--no-pings",
-      "--font-render-hinting=none",
-      "--no-zygote",
-      typeof forceDeviceScaleFactor === "undefined"
-        ? null
-        : `--force-device-scale-factor=${forceDeviceScaleFactor}`,
-      chromiumOptions.ignoreCertificateErrors
-        ? "--ignore-certificate-errors"
-        : null,
-      ...((
-        chromiumOptions === null || chromiumOptions === void 0
-          ? void 0
-          : chromiumOptions.disableWebSecurity
-      )
-        ? ["--disable-web-security"]
-        : []),
-      (
-        chromiumOptions === null || chromiumOptions === void 0
-          ? void 0
-          : chromiumOptions.userAgent
-      )
-        ? `--user-agent="${chromiumOptions.userAgent}"`
-        : null,
+      "--disable-vulkan-fallback-to-gl-for-testing",
+      "--dignore-gpu-blocklist",
+      "--use-angle=vulkan",
     ].filter(Boolean),
     defaultViewport:
       viewport !== null && viewport !== void 0
