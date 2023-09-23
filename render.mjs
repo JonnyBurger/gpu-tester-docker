@@ -2,11 +2,10 @@ import {bundle} from '@remotion/bundler';
 import {renderMedia, selectComposition} from '@remotion/renderer';
 import {createRequire} from 'node:module';
 import {execSync} from 'node:child_process';
+import {VERSION} from 'remotion/version'
 const require = createRequire(import.meta.url);
 
-console.log('LIBC version')
-execSync('ldd --version', {stdio: 'inherit'})
-execSync('apt-cache policy libc6', {stdio: 'inherit'})
+console.log({VERSION})
 
 const bundled = await bundle({
 	entryPoint: require.resolve('./src/index.ts'),
