@@ -35,7 +35,7 @@ ENV NVIDIA_DRIVER_CAPABILITIES compute,graphics,utility
 
 RUN wget https://us.download.nvidia.com/tesla/535.104.05/nvidia-driver-local-repo-ubuntu2204-535.104.05_1.0-1_amd64.deb
 RUN dpkg -i nvidia-driver-local-repo-ubuntu2204-535.104.05_1.0-1_amd64.deb
-RUN cp /var/nvidia-driver-local-repo-ubuntu2204-535.104.05/nvidia-driver-local-22D4AC2B-keyring.gpg /usr/share/keyrings/
+RUN cp /var/nvidia-driver-local-repo-ubuntu2204-535.104.05/nvidia-driver-local-62140ACB-keyring.gpg /usr/share/keyrings/
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get -y install cuda-drivers
 
 RUN apt-key adv --fetch-keys https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2004/x86_64/3bf863cc.pub
