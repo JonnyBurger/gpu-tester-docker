@@ -1,6 +1,6 @@
 ARG DEBIAN_FRONTEND=noninteractive
 ARG VULKAN_SDK_VERSION='curl https://vulkan.lunarg.com/sdk/latest/linux.txt'
-FROM nvidia/cuda:11.4.2-devel-ubuntu22.04
+FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libglvnd0 \
