@@ -1,5 +1,5 @@
 ARG DEBIAN_FRONTEND=noninteractive
-ARG VULKAN_SDK_VERSION='curl https://vulkan.lunarg.com/sdk/latest/linux.txt'
+ARG VULKAN_SDK_VERSION='1.3.261.1'
 FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
