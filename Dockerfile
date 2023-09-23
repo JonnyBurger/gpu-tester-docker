@@ -1,5 +1,4 @@
 ARG DEBIAN_FRONTEND=noninteractive
-ARG VULKAN_SDK_VERSION=1.3.261.1
 FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -18,7 +17,7 @@ RUN wget -q --show-progress \
     --progress=bar:force:noscroll \
     https://sdk.lunarg.com/sdk/download/latest/linux/vulkan_sdk.tar.gz \
     -O /tmp/vulkansdk-linux-x86_64-1.3.261.1.tar.gz \ 
-    && echo "Installing Vulkan SDK! 1.3.261.1" \
+    && echo "Installing Vulkan SDK 1.3.261.1" \
     && mkdir -p /opt/vulkan \
     && tar -xf /tmp/vulkansdk-linux-x86_64-1.3.261.1.tar.gz -C /opt/vulkan \
     && mkdir -p /usr/local/include/ && cp -ra /opt/vulkan/1.3.261.1/x86_64/include/* /usr/local/include/ \
