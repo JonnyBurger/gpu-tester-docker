@@ -6,7 +6,7 @@ test("It should take a snapshot of the GPU Chrome page", async ({ page }) => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
   const aHandle = await page.evaluateHandle(() => document.body);
   const resultHandle = await page.evaluateHandle(
-    (body) => body.innerHTML,
+    (body) => body.outerHTML,
     aHandle
   );
   console.log(await resultHandle.jsonValue());
