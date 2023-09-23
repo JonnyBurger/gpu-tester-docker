@@ -1,5 +1,6 @@
 ARG DEBIAN_FRONTEND=noninteractive
-FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
+ARG VULKAN_SDK_VERSION="curl https://vulkan.lunarg.com/sdk/latest/linux.txt"
+FROM nvidia/cuda:11.4.2-devel-ubuntu22.04
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     libglvnd0 \
@@ -12,8 +13,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     vulkan-utils \
     && rm -rf /var/lib/apt/lists/*
 
-#set VULKAN_SDK_VERSION as a build-arg=`curl https://vulkan.lunarg.com/sdk/latest/linux.txt`
-ARG VULKAN_SDK_VERSION
 # Download the Vulkan SDK and extract the headers, loaders, layers and binary utilities
 RUN wget -q --show-progress \
     --progress=bar:force:noscroll \
