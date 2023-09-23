@@ -11,12 +11,11 @@ RUN apt-get install nodejs -y
 
 WORKDIR /usr/app
 
-COPY ./ ./
-
-COPY gpu.spec.js gpu.spec.js
 COPY package.json package.json
-COPY playwright.config.js playwright.config.js
-
+COPY remotion.config.ts remotion.config.ts
+COPY tsconfig.json tsconfig.json
+COPY render.mjs render.mjs
+COPY src src
 
 RUN npm install
 
