@@ -110,9 +110,6 @@ const internalOpenBrowser = async ({
       "--disable-setuid-sandbox",
       ...customGlRenderer,
       "--disable-background-media-suspend",
-      process.platform === "linux" && chromiumOptions.gl !== "vulkan"
-        ? "--single-process"
-        : null,
       "--allow-running-insecure-content",
       "--disable-component-update",
       "--disable-domain-reliability",
