@@ -54,11 +54,11 @@ WORKDIR /usr/app
 COPY package.json package.json
 COPY remotion.config.ts remotion.config.ts
 COPY tsconfig.json tsconfig.json
-COPY render.mjs render.mjs
 COPY src src
 
 RUN npm install
 
+COPY render.mjs render.mjs
 COPY open-browser.js node_modules/@remotion/renderer/dist/open-browser.js
 
 COPY nvidia_icd.json /etc/vulkan/icd.d/nvidia_icd.json
