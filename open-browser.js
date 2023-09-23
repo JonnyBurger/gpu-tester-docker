@@ -21,6 +21,8 @@ const getOpenGlRenderer = (option) => {
   }
   if (renderer === "vulkan") {
     return [
+      "--use-angle=vulkan",
+      "--use-vulkan=swiftshader",
       "--disable-vulkan-fallback-to-gl-for-testing",
       "--ignore-gpu-blocklist",
     ];
