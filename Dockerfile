@@ -18,7 +18,7 @@ RUN wget -q --show-progress \
     --progress=bar:force:noscroll \
     https://sdk.lunarg.com/sdk/download/latest/linux/vulkan_sdk.tar.gz \
     -O /tmp/vulkansdk-linux-x86_64-${VULKAN_SDK_VERSION}.tar.gz \ 
-    && echo "Installing Vulkan SDK ${VULKAN_SDK_VERSION}" \
+    && echo "Installing Vulkan SDK! ${VULKAN_SDK_VERSION}" \
     && mkdir -p /opt/vulkan \
     && tar -xf /tmp/vulkansdk-linux-x86_64-${VULKAN_SDK_VERSION}.tar.gz -C /opt/vulkan \
     && mkdir -p /usr/local/include/ && cp -ra /opt/vulkan/${VULKAN_SDK_VERSION}/x86_64/include/* /usr/local/include/ \
