@@ -4,7 +4,7 @@ test("It should take a snapshot of the GPU Chrome page", async ({ page }) => {
   await page.goto("chrome://gpu", { waitUntil: "domcontentloaded" });
   await page.screenshot({ path: "gpu.png" });
 
-  const outerHtmls = await page.content();
+  const outerHtmls = await page.innerText("body");
   console.log(outerHtmls);
   await expect(
     page.locator("text=Graphics Feature Status").first()
