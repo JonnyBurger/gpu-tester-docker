@@ -38,6 +38,7 @@ await renderMedia({
   timeoutInMilliseconds: 90000,
   chromiumOptions: {
     gl: "vulkan",
+    enableMultiProcessOnLinux: true,
   },
 });
 console.log(`Rendered composition ${composition.id}.`);
